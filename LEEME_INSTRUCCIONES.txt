@@ -1,0 +1,54 @@
+========================================================================
+PORTAFOLIO EN JAVA PURA (SERVLETS Y JAVA WEB) - ESTILO ANIME / NEÓN
+Estudiante: Hizarra Samaniego Percy Andy
+========================================================================
+
+DESCRIPCIÓN DEL PROYECTO (ACTUALIZADO Y LISTO PARA RENDER):
+- Sistema desarrollado 100% en Java Web (Jakarta Servlet / Java 17).
+- NO UTILIZA archivos HTML estáticos ni JSP. Todo el pintado de la interfaz
+  y respuesta HTTP se genera en dinámico desde Java mediante PrintWriter.
+- INCLUYE LAS 16 SEMANAS completas (Semana 1 a Semana 16).
+- SOPORTA IMÁGENES Y DOCUMENTOS PDF (subida, visualización y eliminación).
+- SERVLET DEDICADO (/ver-archivo): Resuelve las rutas y sirve archivos
+  con espacios o caracteres especiales sin errores 404 en Tomcat / Render.
+- PERSISTENCIA EN RENDER (FREE TIER): Incluye Dockerfile configurado para
+  empaquetar la carpeta 'uploads/' directamente dentro del servidor Tomcat
+  al desplegar en Render, evitando que los archivos se borren al reiniciar.
+
+ESTRUCTURA DE ARCHIVOS:
+PortafolioAnimeJava/
+├── Dockerfile
+├── .gitignore
+├── LEEME_INSTRUCCIONES.txt
+├── pom.xml
+├── uploads/                         <-- Coloca aquí tus subcarpetas semana_1 ... semana_16
+└── src/
+    └── main/
+        ├── java/
+        │   └── com/
+        │       └── portafolio/
+        │           └── PortafolioServlet.java
+        └── webapp/
+            └── WEB-INF/
+                └── web.xml
+
+CÓMO USAR Y DESPLEGAR EN GITHUB + RENDER:
+
+1. GUARDAR TUS ARCHIVOS PARA PERSISTENCIA EN RENDER:
+   - Dentro de la carpeta 'uploads/', crea las carpetas 'semana_1', 'semana_2', ..., hasta 'semana_16'
+     y coloca ahí tus imágenes (.png, .jpg) y documentos (.pdf).
+   - Opcional: Si deseas imagen de fondo personalizada, coloca 'fondo.jpg' dentro de 'src/main/webapp/'.
+
+2. SUBIR A TU REPOSITORIO DE GITHUB:
+   git init
+   git add .
+   git commit -m "Portafolio Java Anime completo - 16 semanas"
+   git branch -M main
+   git remote add origin https://github.com/TU_USUARIO/TU_REPOSITORIO.git
+   git push -u origin main
+
+3. DESPLEGAR EN RENDER:
+   - Crea un nuevo Web Service en Render conectado a tu repositorio.
+   - Selecciona Environment: Docker.
+   - Si el proyecto está dentro de una subcarpeta (ej. portahizarra), indícalo en 'Root Directory'.
+   - Haz clic en 'Create Web Service'.
